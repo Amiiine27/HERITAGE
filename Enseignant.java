@@ -1,6 +1,6 @@
 public abstract class Enseignant{
 
-    private int id = 0, heure = 0;
+    private int id = 0, heure = 0, salaireHoraire = 40;
     private String nom;
 
     public Enseignant(String nom) {
@@ -9,20 +9,22 @@ public abstract class Enseignant{
     }
 
     public void ajoutHeure(int heureArajouter) throws HeureInvalide {
-        /*try {
-            this.heure += heureArajouter;
-        }
-        catch (HeureInvalide e){
-            System.out.println("Nombre d'heures à rajouter");
-        }*/
-
         if (!(heureArajouter<0)){
             this.heure += heureArajouter;
         } else throw new HeureInvalide();
     }
 
     public int calculSommeDue(){
-        int
+        int somme = (getHeureSupp() * salaireHoraire);
+        return somme;
+    }
+
+    public int getHeureSupp(){
+        if (this instanceof Interieur) {
+            int heureSupp = this.heure - ((Interieur) this).getHeuresDues();
+            return heureSupp;
+        }
+        return this.heure;
     }
 
 }

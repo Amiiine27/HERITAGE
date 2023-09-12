@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3d4e24d-3e37-487e-ab8c-45b3df0cc361" name="Changes" comment="classe abstraite">
+    <list default="true" id="a3d4e24d-3e37-487e-ab8c-45b3df0cc361" name="Changes" comment="enseignants">
       <change beforePath="$PROJECT_DIR$/Enseignant.java" beforeDir="false" afterPath="$PROJECT_DIR$/Enseignant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exterieur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exterieur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interieur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interieur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maitre.java" beforeDir="false" afterPath="$PROJECT_DIR$/Maitre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prag.java" beforeDir="false" afterPath="$PROJECT_DIR$/Prag.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +51,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694528286566</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="enseignants">
+      <created>1694528622364</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694528622364</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -71,6 +74,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="classe abstraite" />
-    <option name="LAST_COMMIT_MESSAGE" value="classe abstraite" />
+    <MESSAGE value="enseignants" />
+    <option name="LAST_COMMIT_MESSAGE" value="enseignants" />
   </component>
 </project>
