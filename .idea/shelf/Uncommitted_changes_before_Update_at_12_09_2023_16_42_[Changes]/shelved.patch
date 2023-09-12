@@ -1,0 +1,47 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"a3d4e24d-3e37-487e-ab8c-45b3df0cc361\" name=\"Changes\" comment=\"enseignants\">\n      <change beforePath=\"$PROJECT_DIR$/Enseignant.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Enseignant.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2VIc3yCVMfKSeVP1KBwQBlN15jC\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"a3d4e24d-3e37-487e-ab8c-45b3df0cc361\" name=\"Changes\" comment=\"\" />\n      <created>1694526840415</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1694526840415</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"classe abstraite\">\n      <created>1694528262464</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1694528262464</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"classe abstraite\">\n      <created>1694528286566</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1694528286566</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"enseignants\">\n      <created>1694528622364</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1694528622364</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"4\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"classe abstraite\" />\n    <MESSAGE value=\"enseignants\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"enseignants\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 686cd1bbfcfe38b478182c33298354ec03e35251)
++++ b/.idea/workspace.xml	(date 1694529717000)
+@@ -4,9 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="a3d4e24d-3e37-487e-ab8c-45b3df0cc361" name="Changes" comment="enseignants">
+-      <change beforePath="$PROJECT_DIR$/Enseignant.java" beforeDir="false" afterPath="$PROJECT_DIR$/Enseignant.java" afterDir="false" />
+-    </list>
++    <list default="true" id="a3d4e24d-3e37-487e-ab8c-45b3df0cc361" name="Changes" comment="calcul salaire" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -58,7 +56,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1694528622364</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="calcul salaire">
++      <created>1694529199895</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1694529199895</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -75,6 +80,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="classe abstraite" />
+     <MESSAGE value="enseignants" />
+-    <option name="LAST_COMMIT_MESSAGE" value="enseignants" />
++    <MESSAGE value="calcul salaire" />
++    <option name="LAST_COMMIT_MESSAGE" value="calcul salaire" />
+   </component>
+ </project>
+\ No newline at end of file
