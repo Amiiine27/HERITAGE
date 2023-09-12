@@ -21,4 +21,8 @@ public abstract class Enseignant{
         } else throw new HeureInvalide();
     }
 
+    public int calculSommeDue(){
+        int
+    }
+
 }
