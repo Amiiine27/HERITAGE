@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3d4e24d-3e37-487e-ab8c-45b3df0cc361" name="Changes" comment="enseignants">
-      <change afterPath="$PROJECT_DIR$/Etablissement.java" afterDir="false" />
-    </list>
+    <list default="true" id="a3d4e24d-3e37-487e-ab8c-45b3df0cc361" name="Changes" comment="etab + 2 methodes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +61,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694528622364</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="etab + 2 methodes">
+      <option name="closed" value="true" />
+      <created>1694529695235</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694529695235</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -80,6 +86,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="classe abstraite" />
     <MESSAGE value="enseignants" />
-    <option name="LAST_COMMIT_MESSAGE" value="enseignants" />
+    <MESSAGE value="etab + 2 methodes" />
+    <option name="LAST_COMMIT_MESSAGE" value="etab + 2 methodes" />
   </component>
 </project>
