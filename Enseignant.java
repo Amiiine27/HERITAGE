@@ -27,4 +27,19 @@ public abstract class Enseignant{
         return this.heure;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public int getHeure() {
+        return heure;
+    }
+
+    public int getSalaireHoraire() {
+        return salaireHoraire;
+    }
+
+    public String getNom() {
+        return nom;
+    }
 }

@@ -42,4 +42,21 @@ public class Etablissement {
 
         }
     }
+
+    public void afficheEnseignantFlemmards(){
+        for(Enseignant prof : effectif){
+            if (prof.getHeureSupp()==0){
+                System.out.println(prof.getNom()+" ayant l'identifiant " + prof.getId() + " n'a fais aucune heure complémentaire.");
+            }
+        }
+    }
+
+    public void afficheEnseignantAuDessusDeNheureSupp(int n){
+        for(Enseignant prof : effectif){
+            if (prof.getHeureSupp()>n){
+                if (n==1) System.out.println(prof.getNom()+" ayant l'identifiant " + prof.getId() + " a fait plus de 1 heure complémentaire.");
+                else System.out.println(prof.getNom()+" ayant l'identifiant " + prof.getId() + " a fait plus de " + n + " heures complémentaires.");
+            }
+        }
+    }
 }
