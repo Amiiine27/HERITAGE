@@ -59,4 +59,31 @@ public class Etablissement {
             }
         }
     }
+
+    public void afficherEnseignants(){
+        for (Enseignant prof : effectif){
+            System.out.println(prof.getNom() + "  "+ prof.getId());
+        }
+    }
+
+    public ArrayList getEnseignants(){
+        return this.effectif;
+    }
+
+    public void profAvecPlusHeures(){
+        int actuel = 0;
+        Enseignant id = null;
+
+
+        for (Enseignant prof : effectif){
+            if (prof.getHeure() > actuel) {
+                actuel = prof.getHeure();
+                id = prof;
+            }
+        }
+
+        System.out.println("Le prof avec le plus d'heures est " + id.getNom() + " avec " + actuel + "ID = " + id.getId());
+    }
+
+
 }

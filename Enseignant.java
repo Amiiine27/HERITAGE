@@ -1,11 +1,14 @@
 public abstract class Enseignant{
 
-    private int id = 0, heure = 0, salaireHoraire = 40;
+    private static int compteur = 0;
+    private int id = 0;
+    private int heure = 0, salaireHoraire = 40;
     private String nom;
 
     public Enseignant(String nom) {
-        this.id++;
+        this.id = compteur;
         this.nom = nom;
+        compteur++;
     }
 
     public void ajoutHeure(int heureArajouter) throws HeureInvalide {
@@ -27,6 +30,14 @@ public abstract class Enseignant{
         return this.heure;
     }
 
+
+
+
+
+    public String getNom() {
+        return this.nom;
+    }
+
     public int getId() {
         return id;
     }
@@ -39,7 +50,4 @@ public abstract class Enseignant{
         return salaireHoraire;
     }
 
-    public String getNom() {
-        return nom;
-    }
 }

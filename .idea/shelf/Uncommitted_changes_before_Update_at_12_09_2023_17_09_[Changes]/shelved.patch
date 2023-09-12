@@ -1,0 +1,193 @@
+Index: Etablissement.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.ArrayList;\nimport java.util.Scanner;\n\npublic class Etablissement {\n\n    /*\n    Attribute\n     */\n    private ArrayList<Enseignant> effectif;\n\n    /*\n    Constructor\n     */\n    public Etablissement() {\n        effectif  = new ArrayList<Enseignant>();\n    }\n\n    /*\n    Methods\n     */\n    public int getHeuresSuppTotales(){\n        int hsupp = 0;\n        for (Enseignant prof : effectif){\n            hsupp += prof.getHeureSupp();\n        }\n        return hsupp;\n    }\n\n    public int prixApayer(){\n        return this.getHeuresSuppTotales()*40;\n    }\n\n    public void ajouterHeureSupp() throws HeureInvalide {\n        Scanner sc = new Scanner(System.in);\n        for (Enseignant prof : effectif){\n            try {\n                prof.ajoutHeure(sc.nextInt());\n            }\n            catch (HeureInvalide e){\n                System.out.println(\"Heure Saisie Invalide\");\n            }\n\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Etablissement.java b/Etablissement.java
+--- a/Etablissement.java	(revision 85707ab9c3c1b016a623a57c996c7fe55f879e42)
++++ b/Etablissement.java	(date 1694531376000)
+@@ -42,4 +42,31 @@
+ 
+         }
+     }
++
++    public void afficherEnseignants(){
++        for (Enseignant prof : effectif){
++            System.out.println(prof.getNom());
++        }
++    }
++
++    public ArrayList getEnseignants(){
++        return this.effectif;
++    }
++
++    public void profAvecPlusHeures(){
++        int actuel = 0;
++        int id = 0;
++
++
++        for (Enseignant prof : effectif){
++            if (prof.getHeure() > actuel) {
++                actuel = prof.getHeure();
++                id = prof.getId();
++            }
++        }
++
++        System.out.println("Le prof avec le plus d'heures est " + effectif.get(id).getNom() + " avec " + actuel + "ID = " + effectif.get(id).getId());
++    }
++
++
+ }
+Index: Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Main {\n    public static void main(String[] args) throws HeureInvalide {\n        Interieur a = new Prag(\"Akhrib\");\n        a.ajoutHeure(340);\n\n        Interieur b = new Maitre(\"Lamchichi\");\n        b.ajoutHeure(180);\n\n        Interieur c = new Maitre(\"Turlupin\");\n        c.ajoutHeure(650);\n\n        Interieur d = new Maitre(\"Blancbec\");\n        d.ajoutHeure(32);\n\n        Exterieur e = new Exterieur(\"Kheroua\");\n        e.ajoutHeure(20);\n\n        Exterieur f = new Exterieur(\"Shalom\");\n        f.ajoutHeure(65);\n\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Main.java b/Main.java
+--- a/Main.java	(revision 85707ab9c3c1b016a623a57c996c7fe55f879e42)
++++ b/Main.java	(date 1694531287000)
+@@ -1,22 +1,34 @@
+ public class Main {
+     public static void main(String[] args) throws HeureInvalide {
++
++        Etablissement etab = new Etablissement();
++
+         Interieur a = new Prag("Akhrib");
+         a.ajoutHeure(340);
++        etab.getEnseignants().add(a);
+ 
+         Interieur b = new Maitre("Lamchichi");
+         b.ajoutHeure(180);
++        etab.getEnseignants().add(b);
+ 
+         Interieur c = new Maitre("Turlupin");
+-        c.ajoutHeure(650);
++        c.ajoutHeure(320);
++        etab.getEnseignants().add(c);
+ 
+         Interieur d = new Maitre("Blancbec");
+         d.ajoutHeure(32);
++        etab.getEnseignants().add(d);
+ 
+         Exterieur e = new Exterieur("Kheroua");
+         e.ajoutHeure(20);
++        etab.getEnseignants().add(e);
+ 
+         Exterieur f = new Exterieur("Shalom");
+-        f.ajoutHeure(65);
++        f.ajoutHeure(650);
++        etab.getEnseignants().add(f);
++
++        etab.afficherEnseignants();
++        etab.profAvecPlusHeures();
+ 
+ 
+     }
+Index: Enseignant.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public abstract class Enseignant{\n\n    private int id = 0, heure = 0, salaireHoraire = 40;\n    private String nom;\n\n    public Enseignant(String nom) {\n        this.id++;\n        this.nom = nom;\n    }\n\n    public void ajoutHeure(int heureArajouter) throws HeureInvalide {\n        if (!(heureArajouter<0)){\n            this.heure += heureArajouter;\n        } else throw new HeureInvalide();\n    }\n\n    public int calculSommeDue(){\n        int somme = (getHeureSupp() * salaireHoraire);\n        return somme;\n    }\n\n    public int getHeureSupp(){\n        if (this instanceof Interieur) {\n            int heureSupp = this.heure - ((Interieur) this).getHeuresDues();\n            return heureSupp;\n        }\n        return this.heure;\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Enseignant.java b/Enseignant.java
+--- a/Enseignant.java	(revision 85707ab9c3c1b016a623a57c996c7fe55f879e42)
++++ b/Enseignant.java	(date 1694530986000)
+@@ -27,4 +27,16 @@
+         return this.heure;
+     }
+ 
++    public int getHeure(){
++        return this.heure;
++    }
++
++    public int getId(){
++        return this.id;
++    }
++
++    public String getNom() {
++        return this.nom;
++    }
++
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"a3d4e24d-3e37-487e-ab8c-45b3df0cc361\" name=\"Changes\" comment=\"enseignants\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2VIc3yCVMfKSeVP1KBwQBlN15jC\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"a3d4e24d-3e37-487e-ab8c-45b3df0cc361\" name=\"Changes\" comment=\"\" />\n      <created>1694526840415</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1694526840415</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"classe abstraite\">\n      <created>1694528262464</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1694528262464</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"classe abstraite\">\n      <created>1694528286566</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1694528286566</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"enseignants\">\n      <created>1694528622364</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1694528622364</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"4\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"classe abstraite\" />\n    <MESSAGE value=\"enseignants\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"enseignants\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 85707ab9c3c1b016a623a57c996c7fe55f879e42)
++++ b/.idea/workspace.xml	(date 1694530986000)
+@@ -4,8 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="a3d4e24d-3e37-487e-ab8c-45b3df0cc361" name="Changes" comment="enseignants">
++    <list default="true" id="a3d4e24d-3e37-487e-ab8c-45b3df0cc361" name="Changes" comment="main">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Enseignant.java" beforeDir="false" afterPath="$PROJECT_DIR$/Enseignant.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Etablissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Etablissement.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -27,6 +30,20 @@
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="RunManager">
++    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Main" />
++      <module name="HERITAGE" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.Main" />
++      </list>
++    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -58,7 +75,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1694528622364</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="main">
++      <created>1694530256484</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1694530256484</updated>
++    </task>
++    <task id="LOCAL-00005" summary="main">
++      <created>1694530360134</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1694530360134</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -75,6 +106,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="classe abstraite" />
+     <MESSAGE value="enseignants" />
+-    <option name="LAST_COMMIT_MESSAGE" value="enseignants" />
++    <MESSAGE value="main" />
++    <option name="LAST_COMMIT_MESSAGE" value="main" />
+   </component>
+ </project>
+\ No newline at end of file

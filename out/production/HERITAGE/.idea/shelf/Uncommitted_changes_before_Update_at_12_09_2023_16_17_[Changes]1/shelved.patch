@@ -1,0 +1,30 @@
+Index: Exterieur.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Exterieur.java b/Exterieur.java
+new file mode 100644
+--- /dev/null	
++++ b/Exterieur.java	
+@@ -0,0 +1,2 @@
++public class Exterieur {
++}
+Index: Interieur.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Interieur.java b/Interieur.java
+new file mode 100644
+--- /dev/null	
++++ b/Interieur.java	
+@@ -0,0 +1,8 @@
++public abstract class Interieur {
++
++    private int heuresDues;
++
++    public Interieur(int heuresDues){
++        this.heuresDues = heuresDues;
++    }
++}
