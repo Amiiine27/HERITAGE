@@ -7,5 +7,12 @@ public abstract class Interieur extends Enseignant{
         this.heuresDues = heuresDues;
     }
 
+    @Override
+    public int getHeureSupp() {
+            int heureSupp = this.getHeure() - this.getHeuresDues();
+            return heureSupp;
+
+    }
+
     public int getHeuresDues() { return this.heuresDues;}
 }

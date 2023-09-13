@@ -18,21 +18,11 @@ public abstract class Enseignant{
     }
 
     public int calculSommeDue(){
-        int somme = (getHeureSupp() * salaireHoraire);
+        int somme = (this.getHeureSupp() * salaireHoraire);
         return somme;
     }
 
-    public int getHeureSupp(){
-        if (this instanceof Interieur) {
-            int heureSupp = this.heure - ((Interieur) this).getHeuresDues();
-            return heureSupp;
-        }
-        return this.heure;
-    }
-
-
-
-
+    abstract int getHeureSupp();
 
     public String getNom() {
         return this.nom;

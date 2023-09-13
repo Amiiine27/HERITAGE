@@ -7,8 +7,8 @@
     <list default="true" id="a3d4e24d-3e37-487e-ab8c-45b3df0cc361" name="Changes" comment="main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Enseignant.java" beforeDir="false" afterPath="$PROJECT_DIR$/Enseignant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Etablissement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Etablissement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exterieur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exterieur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interieur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interieur.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2VIc3yCVMfKSeVP1KBwQBlN15jC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
